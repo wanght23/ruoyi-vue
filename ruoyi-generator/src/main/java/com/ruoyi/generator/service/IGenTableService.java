@@ -67,11 +67,21 @@ public interface IGenTableService
     public void deleteGenTableByIds(Long[] tableIds);
 
     /**
-     * 导入表结构
-     * 
-     * @param tableList 导入表列表
+     * 创建表
+     *
+     * @param sql 创建表语句
+     * @return 结果
      */
-    public void importGenTable(List<GenTable> tableList);
+    public boolean createTable(String sql);
+
+    /**
+     * 导入表结构
+     *
+     * @param tableList 导入表列表
+     * @param tplWebType 前端类型
+     * @param operName 操作人员
+     */
+    public void importGenTable(List<GenTable> tableList, String tplWebType, String operName);
 
     /**
      * 预览代码
